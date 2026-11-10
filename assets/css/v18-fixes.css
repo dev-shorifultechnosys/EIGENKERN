@@ -1,0 +1,171 @@
+/* ===========================================================================
+   EIGENKERN V18: Targeted final homepage refinements.
+   Preserve every existing page and V16/V17's original animation files.
+   Changes: restore continuous moving particles, fix arrows, contact menu,
+   and re-create the reference's cinematic CTA with the project's Blue palette.
+   All visuals remain real HTML/SVG/CSS; no baked text or external libraries.
+   =========================================================================== */
+:root { --v18-blue:#1465B5; --v18-cyan:#29B6EF; --v18-navy:#071D38; }
+
+/* 1. The V17 override accidentally suppressed the V16 particle field.
+      Restore the original 13 animated circles while retaining V17's new
+      cross-stop / safe transfer / return sequence. */
+.ek-ref-flow__paths > circle.ek-ref-flow__ball { display: initial; }
+.ek-ref-flow__rail--return { animation:ekRefRail 10s linear infinite; }
+
+/* 2. Header navigation: fit the sixth menu item on laptops. */
+@media (min-width:961px) {
+  .site-nav { gap:clamp(11px,1.45vw,23px); }
+  .site-nav__link {white-space:nowrap;}
+}
+@media (min-width:961px) and (max-width:1160px){
+  .site-header__inner {grid-template-columns:minmax(128px,0.8fr) auto minmax(180px,0.95fr);column-gap:12px;}
+  .site-nav{gap:10px;}
+  .site-nav__link{font-size:11px;}
+}
+
+/* 3. WÄCHTER arrows: occupy ONLY the space between the cards.
+      Their bounding boxes must never overlap the neighbouring cards. */
+.waechter__steps { --v18-arrow-gap:38px; gap:var(--v18-arrow-gap); }
+.waechter-step__connector {
+  width:20px;height:20px;right:calc(-1 * (var(--v18-arrow-gap) / 2 + 10px));
+  top:50%;transform:translateY(-50%);z-index:2;
+  pointer-events:none;filter:drop-shadow(0 1px 1px rgba(0,9,20,.35));
+}
+.waechter-step__connector .icon{width:19px;height:19px;stroke-width:2.2;}
+.waechter-step:last-child .waechter-step__connector{display:none;}
+@media (max-width:860px){
+  .waechter__steps{--v18-arrow-gap:40px;}
+  .waechter-step:nth-child(1) .waechter-step__connector{
+    right:calc(-1 * (var(--v18-arrow-gap) / 2 + 10px));left:auto;top:50%;bottom:auto;transform:translateY(-50%);
+  }
+  .waechter-step:nth-child(2) .waechter-step__connector{
+    left:50%;right:auto;top:auto;bottom:calc(-1 * (var(--v18-arrow-gap) / 2 + 10px));transform:translateX(-50%) rotate(90deg);
+  }
+  .waechter-step:nth-child(3) .waechter-step__connector{
+    left:calc(-1 * (var(--v18-arrow-gap) / 2 + 10px));right:auto;top:50%;bottom:auto;transform:translateY(-50%) rotate(180deg);
+  }
+}
+@media (max-width:570px){
+  .waechter__steps{--v18-arrow-gap:32px;}
+  .waechter-step:nth-child(1) .waechter-step__connector,
+  .waechter-step:nth-child(2) .waechter-step__connector,
+  .waechter-step:nth-child(3) .waechter-step__connector{
+    right:auto;left:50%;top:auto;bottom:calc(-1 * (var(--v18-arrow-gap) / 2 + 10px));transform:translateX(-50%) rotate(90deg);
+  }
+}
+
+/* 4. Premium consultation banner — reference geometry, Blue / Cyan only.
+      The photo remains natural colour; no green/teal overlays or wedges. */
+.ek-final-cta__panel--v17{
+  grid-template-columns:minmax(260px,30%) minmax(0,1fr) minmax(210px,20%);
+  min-height:clamp(278px,22vw,328px);
+  background:
+    radial-gradient(ellipse at 95% -2%,rgba(41,182,239,.26),transparent 39%),
+    radial-gradient(ellipse at 57% 105%,rgba(20,101,181,.24),transparent 47%),
+    linear-gradient(109deg,#071D38 1%,#082745 46%,#072348 70%,#0C376E 100%);
+  border:1px solid rgba(41,182,239,.22);
+  border-radius:22px;
+  box-shadow:0 15px 33px rgba(7,29,56,.16);
+}
+.ek-final-cta__panel--v17 .ek-final-cta__photo{
+  clip-path:url(#ek-v18-photo-clip);
+  -webkit-clip-path:url(#ek-v18-photo-clip);
+  width:100%;min-height:328px;z-index:2;
+  background:#0B3157;
+}
+.ek-final-cta__panel--v17 .ek-final-cta__photo img{
+  filter:none!important;
+  object-position:48% 45%;
+}
+.ek-final-cta__panel--v17 .ek-final-cta__photo::after{background:none!important;}
+.ek-v17-cta__waves{z-index:1;opacity:1;}
+.ek-v18-cta__edge{
+  fill:none;stroke:#46D4FF;stroke-width:2.6;
+  opacity:.92;filter:drop-shadow(0 0 9px rgba(41,182,239,.85));
+  stroke-dasharray:980;animation:ekV18Edge 11s ease-in-out infinite;
+}
+@keyframes ekV18Edge{0%,100%{stroke-dashoffset:0;opacity:.87}45%{stroke-dashoffset:-175;opacity:1}}
+.ek-v18-cta__ribbon{stroke-width:2.6;opacity:.8;filter:drop-shadow(0 0 11px rgba(41,182,239,.87));}
+.ek-v18-cta__ribbon--strong{stroke-width:3.6;opacity:.97;filter:drop-shadow(0 0 14px rgba(41,182,239,.94));}
+.ek-v18-cta__ribbon--upper{stroke-width:1.35;opacity:.58;}
+.ek-final-cta__panel--v17 .ek-final-cta__content{z-index:3;padding:29px 17px 29px 26px;}
+.ek-final-cta__panel--v17 .ek-final-cta__eyebrow{color:#93E8FF;font-size:clamp(10px,.91vw,13px);margin-bottom:16px;}
+.ek-final-cta__panel--v17 .ek-final-cta__heading{
+  max-width:none;font-size:clamp(27px,2.7vw,42px);
+  font-weight:800;letter-spacing:-.035em;line-height:1.09;
+}
+.ek-v17-cta__headline-accent{color:#5DCBFF;}
+.ek-final-cta__panel--v17 .ek-final-cta__description{font-size:clamp(13px,1.11vw,17px);margin-top:14px;margin-bottom:25px;}
+.ek-final-cta__panel--v17 .ek-final-cta__benefits{display:flex;flex-wrap:nowrap;gap:clamp(10px,1.8vw,27px);}
+.ek-final-cta__panel--v17 .ek-final-cta__benefit{font-size:clamp(11px,.94vw,14px);gap:9px;white-space:normal;}
+.ek-final-cta__panel--v17 .ek-final-cta__benefit + .ek-final-cta__benefit{border-left:1px solid rgba(41,182,239,.42);padding-left:clamp(9px,1.35vw,19px);}
+.ek-final-cta__panel--v17 .ek-final-cta__check{
+  width:48px;height:48px;flex:0 0 48px;border-radius:13px;
+  background:linear-gradient(145deg,#0A5BA0,#072D59);
+  border-color:rgba(41,182,239,.7);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.24),0 3px 13px rgba(41,182,239,.3);
+  color:#9CE7FF;
+}
+.ek-final-cta__panel--v17 .ek-final-cta__check .icon{width:28px;height:28px;stroke-width:1.75;}
+.ek-final-cta__panel--v17 .ek-final-cta__action{padding:26px 24px 26px 0;min-width:0;gap:12px;}
+.ek-final-cta__panel--v17 .ek-final-cta__button{
+  width:100%;min-width:0;min-height:66px;border-radius:999px;
+  background:linear-gradient(115deg,#29B6EF 0%,#176DCE 51%,#1265BB 100%);
+  border:1px solid #72DFFF;
+  box-shadow:0 8px 24px rgba(0,98,192,.3),inset 0 1px 0 rgba(255,255,255,.3);
+  font-size:clamp(12px,.96vw,15px);white-space:normal;text-align:center;
+}
+.ek-final-cta__panel--v17 .ek-final-cta__test{font-size:clamp(11px,.9vw,13px);}
+@media (max-width:1230px){
+  .ek-final-cta__panel--v17{grid-template-columns:minmax(215px,27%) minmax(0,1fr) minmax(185px,20%);}
+  .ek-final-cta__panel--v17 .ek-final-cta__content{padding:23px 12px 23px 20px;}
+  .ek-final-cta__panel--v17 .ek-final-cta__heading{font-size:clamp(24px,2.58vw,34px);}
+  .ek-final-cta__panel--v17 .ek-final-cta__check{width:37px;height:37px;flex-basis:37px;}
+  .ek-final-cta__panel--v17 .ek-final-cta__check .icon{width:24px;height:24px;}
+  .ek-final-cta__panel--v17 .ek-final-cta__benefits{gap:9px;}
+  .ek-final-cta__panel--v17 .ek-final-cta__button{min-height:54px;}
+}
+@media (max-width:1050px){
+  .ek-final-cta__panel--v17{grid-template-columns:minmax(180px,30%) minmax(0,1fr);}
+  .ek-final-cta__panel--v17 .ek-final-cta__photo{grid-row:1/3;min-height:100%;}
+  .ek-final-cta__panel--v17 .ek-final-cta__content{padding:25px 23px 7px;}
+  .ek-final-cta__panel--v17 .ek-final-cta__action{padding:14px 23px 26px;}
+  .ek-final-cta__panel--v17 .ek-final-cta__button{max-width:280px;}
+  .ek-final-cta__panel--v17 .ek-final-cta__benefits{flex-wrap:wrap;}
+  .ek-final-cta__panel--v17 .ek-final-cta__benefit + .ek-final-cta__benefit{border-left:0;padding-left:0;}
+}
+@media (max-width:680px){
+  .ek-final-cta__panel--v17{display:flex;flex-direction:column;}
+  .ek-final-cta__panel--v17 .ek-final-cta__photo{
+    clip-path:ellipse(88% 104% at 48% 0%);-webkit-clip-path:ellipse(88% 104% at 48% 0%);
+    height:clamp(165px,51vw,228px);min-height:0;
+  }
+  .ek-final-cta__panel--v17 .ek-final-cta__content{padding:20px 22px 3px;}
+  .ek-final-cta__panel--v17 .ek-final-cta__heading{font-size:clamp(25px,7.15vw,34px);}
+  .ek-final-cta__panel--v17 .ek-final-cta__description{font-size:14px;margin-bottom:17px;}
+  .ek-final-cta__panel--v17 .ek-final-cta__benefits{display:grid;grid-template-columns:1fr;gap:11px;}
+  .ek-final-cta__panel--v17 .ek-final-cta__check{width:34px;height:34px;flex-basis:34px;}
+  .ek-final-cta__panel--v17 .ek-final-cta__check .icon{width:21px;height:21px;}
+  .ek-final-cta__panel--v17 .ek-final-cta__benefit{font-size:13px;}
+  .ek-final-cta__panel--v17 .ek-final-cta__action{padding:18px 22px 25px;}
+  .ek-final-cta__panel--v17 .ek-final-cta__button{max-width:none;}
+  .ek-v18-cta__edge{display:none;}
+  .ek-v17-cta__waves{opacity:.62;}
+}
+@media (prefers-reduced-motion:reduce){
+  .ek-v18-cta__edge,.ek-v18-cta__ribbon{animation:none!important;}
+}
+
+/* Original architectural photo contains a green decorative wedge at its far
+   right edge. Crop that baked tint out via object framing; do NOT colour-grade
+   the actual building. Extra image scale is decorative and has no interaction. */
+.ek-final-cta__panel--v17 .ek-final-cta__photo img{
+  object-position:0% 45%;transform:scale(1.15);transform-origin:0% 50%;
+}
+@media(max-width:1050px){
+  .ek-final-cta__panel--v17 .ek-final-cta__photo img{transform:scale(1.23);}
+}
+@media(max-width:680px){
+  .ek-final-cta__panel--v17 .ek-final-cta__photo img{transform:scale(1.52);transform-origin:0% 46%;}
+}

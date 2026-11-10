@@ -1,0 +1,165 @@
+/* ===========================================================================
+ EIGENKERN V19 — reference-driven CTA + animated Wächter process + text reveal.
+ Palette strictly: #071D38 Navy / #1465B5 Royal Blue / #29B6EF Cyan.
+ The existing animated 3D Hero and synchronized Cross security sequence remain.
+ No dependencies. All effects are decorative and honor reduced-motion.
+ =========================================================================== */
+:root{--v19-blue:#1465B5;--v19-cyan:#29B6EF;--v19-navy:#071D38}
+
+/* 01. CTA: photographic crescent, deep navy base, stronger luminous ribbon.
+      Keep original architecture photo natural; do not introduce artificial teal tint. */
+.ek-final-cta__panel--v17{
+  grid-template-columns:minmax(260px,30.5%) minmax(0,1fr) minmax(205px,19.7%);
+  min-height:clamp(304px,22.5vw,350px);
+  background:
+    radial-gradient(ellipse at 98% -12%,rgba(41,182,239,.38) 0,rgba(20,101,181,.08) 35%,transparent 56%),
+    linear-gradient(112deg,#071D38 0%,#082849 49%,#0B3263 73%,#0D4980 100%);
+  box-shadow:0 16px 33px rgba(7,29,56,.18),0 1px 2px rgba(7,29,56,.1);
+}
+.ek-final-cta__panel--v17 .ek-final-cta__photo{
+  clip-path:url(#ek-v18-photo-clip);-webkit-clip-path:url(#ek-v18-photo-clip);
+  min-height:350px;
+}
+.ek-final-cta__panel--v17 .ek-final-cta__photo img{
+  filter:none!important;object-position:0% 48%;transform:scale(1.07);transform-origin:left center;
+}
+.ek-v19-cta__photo-rim{position:absolute;left:0;top:0;height:100%;width:30.5%;z-index:2;pointer-events:none;overflow:visible;}
+.ek-v19-cta__photo-rim-glow,.ek-v19-cta__photo-rim-core{fill:none;stroke-linecap:round;}
+.ek-v19-cta__photo-rim-glow{stroke:#29B6EF;stroke-width:11;opacity:.27;filter:blur(6px);}
+.ek-v19-cta__photo-rim-core{stroke:#90E8FF;stroke-width:2.2;opacity:.96;filter:drop-shadow(0 0 6px rgba(41,182,239,.88));stroke-dasharray:850;animation:v19Rim 10s ease-in-out infinite;}
+@keyframes v19Rim{0%,100%{stroke-dashoffset:0}50%{stroke-dashoffset:-82}}
+/* Old low-contrast tracing ribbons are replaced with a clear, readable sweep. */
+.ek-v18-cta__ribbon{opacity:.2;stroke-width:1;filter:none;}
+.ek-v18-cta__edge{opacity:0!important;}
+.ek-v19-wave__surface{fill:url(#ek-v19-ribbon-surface);opacity:.68;}
+.ek-v19-wave__strand{fill:none;stroke:url(#ek-v19-ribbon-glow);stroke-linecap:round;stroke-width:2.3;stroke-dasharray:1450;animation:v19Wave 13s linear infinite;filter:drop-shadow(0 0 8px rgba(41,182,239,.74));}
+.ek-v19-wave__strand--wide{stroke-width:7;opacity:.18;filter:blur(4px);animation-duration:14s;}
+.ek-v19-wave__strand--bright{stroke-width:2.7;opacity:1;animation-duration:12s;}
+.ek-v19-wave__strand--fine{stroke-width:1.15;opacity:.75;animation-duration:16s;}
+.ek-v19-wave__strand--hairline{stroke-width:.8;opacity:.43;animation-duration:18s;}
+.ek-v19-wave__upper{fill:none;stroke:#48BDFF;stroke-width:1.6;opacity:.25;filter:drop-shadow(0 0 5px #29B6EF);}
+.ek-v19-wave__tracer{fill:#E9FAFF;stroke:#29B6EF;stroke-width:1.5;filter:drop-shadow(0 0 8px #29B6EF);}
+@keyframes v19Wave{0%{stroke-dashoffset:0}50%{stroke-dashoffset:-430}100%{stroke-dashoffset:-1450}}
+.ek-final-cta__panel--v17 .ek-final-cta__content{padding:30px 14px 30px 26px;z-index:3;}
+.ek-final-cta__panel--v17 .ek-final-cta__eyebrow{font-size:clamp(10px,.92vw,13px);margin-bottom:18px;color:#8FE5FF;letter-spacing:.115em;}
+.ek-final-cta__panel--v17 .ek-final-cta__heading{font-size:clamp(28px,2.67vw,41px);line-height:1.09;letter-spacing:-.033em;font-weight:800;}
+.ek-v17-cta__headline-accent{color:#5DD0FF;}
+.ek-final-cta__panel--v17 .ek-final-cta__description{margin:13px 0 24px;font-size:clamp(13.5px,1.2vw,17px);color:#ECF7FF;}
+.ek-final-cta__panel--v17 .ek-final-cta__benefits{gap:clamp(8px,1.4vw,21px);align-items:center;}
+.ek-final-cta__panel--v17 .ek-final-cta__benefit{font-size:clamp(12px,.98vw,15px);gap:10px;font-weight:650;}
+.ek-final-cta__panel--v17 .ek-final-cta__check{
+  width:47px;height:47px;flex:0 0 47px;border-radius:13px;color:#8CDEFF;
+  background:linear-gradient(135deg,rgba(22,113,191,.68),rgba(5,42,85,.84));
+  border:1px solid rgba(52,192,252,.69);
+  box-shadow:0 0 13px rgba(41,182,239,.24),inset 0 1px rgba(255,255,255,.21);
+}
+.ek-final-cta__panel--v17 .ek-final-cta__check .icon{width:27px;height:27px;stroke-width:1.75;}
+.ek-final-cta__panel--v17 .ek-final-cta__action{padding:25px 23px 25px 3px;min-width:0;z-index:4;}
+.ek-final-cta__panel--v17 .ek-final-cta__button{
+ min-height:64px;min-width:0;width:100%;border-radius:999px;
+ background:linear-gradient(112deg,#29B6EF 0%,#187CE0 57%,#1465B5 100%);
+ border:1px solid #69D8FF;box-shadow:inset 0 2px rgba(255,255,255,.25),0 5px 21px rgba(13,113,223,.32);
+ font-size:clamp(12px,1.01vw,16px);font-weight:800;
+}
+.ek-final-cta__panel--v17 .ek-final-cta__test{font-size:clamp(11.5px,.96vw,14px);}
+@media(min-width:1300px){.ek-final-cta__panel--v17 .ek-final-cta__benefit+ .ek-final-cta__benefit{padding-left:14px;}}
+@media(max-width:1250px){
+ .ek-final-cta__panel--v17{grid-template-columns:minmax(200px,27%) minmax(0,1fr) minmax(174px,20%);}
+ .ek-final-cta__panel--v17 .ek-final-cta__photo{min-height:310px;}
+ .ek-v19-cta__photo-rim{width:27%;}
+ .ek-final-cta__panel--v17 .ek-final-cta__content{padding:24px 11px 24px 20px;}
+ .ek-final-cta__panel--v17 .ek-final-cta__heading{font-size:clamp(25px,2.55vw,34px);}
+ .ek-final-cta__panel--v17 .ek-final-cta__check{width:35px;height:35px;flex-basis:35px;}
+ .ek-final-cta__panel--v17 .ek-final-cta__check .icon{width:22px;height:22px;}
+ .ek-final-cta__panel--v17 .ek-final-cta__button{min-height:53px;}
+}
+@media(max-width:1050px){
+ .ek-final-cta__panel--v17{grid-template-columns:minmax(180px,30%) minmax(0,1fr);}
+ .ek-final-cta__panel--v17 .ek-final-cta__photo{min-height:100%;}
+ .ek-v19-cta__photo-rim{width:30%;}
+ .ek-final-cta__panel--v17 .ek-final-cta__content{padding:25px 25px 8px;}
+ .ek-final-cta__panel--v17 .ek-final-cta__action{padding:13px 25px 25px;}
+ .ek-final-cta__panel--v17 .ek-final-cta__button{max-width:285px;}
+ .ek-final-cta__panel--v17 .ek-final-cta__benefits{flex-wrap:wrap;}
+}
+@media(max-width:680px){
+ .ek-final-cta__panel--v17{display:flex;flex-direction:column;}
+ .ek-final-cta__panel--v17 .ek-final-cta__photo{height:clamp(162px,51vw,221px);min-height:0;clip-path:ellipse(88% 102% at 48% 0%);-webkit-clip-path:ellipse(88% 102% at 48% 0%);}
+ .ek-v19-cta__photo-rim{display:none;}
+ .ek-final-cta__panel--v17 .ek-final-cta__photo img{transform:scale(1.3);transform-origin:10% 45%;}
+ .ek-final-cta__panel--v17 .ek-final-cta__content{padding:20px 22px 4px;}
+ .ek-final-cta__panel--v17 .ek-final-cta__heading{font-size:clamp(25px,7.1vw,33px);}
+ .ek-final-cta__panel--v17 .ek-final-cta__description{font-size:14px;margin:10px 0 18px;}
+ .ek-final-cta__panel--v17 .ek-final-cta__benefits{display:grid;grid-template-columns:1fr;gap:11px;}
+ .ek-final-cta__panel--v17 .ek-final-cta__check{width:35px;height:35px;flex-basis:35px;}
+ .ek-final-cta__panel--v17 .ek-final-cta__action{padding:19px 22px 26px;}
+ .ek-final-cta__panel--v17 .ek-final-cta__button{max-width:none;}
+ .ek-v17-cta__waves{opacity:.74;}
+}
+/* 02. Four-stage workflow: a measured 8-second tour, not four flashy cards.
+    Invisible until the section enters viewport; pausing while off-screen saves CPU.
+    The numbered sequence is already conveyed in visible copy to motion-sensitive users. */
+@media(prefers-reduced-motion:no-preference){
+  .waechter__steps.v19-flow-ready .waechter-step{
+   --v19-delay:0s;animation:v19GuardianStage 8s ease-in-out infinite;
+   animation-delay:var(--v19-delay);animation-play-state:paused;
+   will-change:border-color,box-shadow;
+  }
+  .waechter__steps.v19-flow-ready.v19-in-view .waechter-step{animation-play-state:running;}
+  .waechter__steps.v19-flow-ready .waechter-step:nth-child(2){--v19-delay:2s;}
+  .waechter__steps.v19-flow-ready .waechter-step:nth-child(3){--v19-delay:4s;}
+  .waechter__steps.v19-flow-ready .waechter-step:nth-child(4){--v19-delay:6s;}
+  @keyframes v19GuardianStage{
+    0%,2%,21%,24%{border-color:rgba(41,182,239,.7);box-shadow:0 0 0 1px rgba(41,182,239,.16),0 0 21px rgba(41,182,239,.23),inset 0 0 18px rgba(41,182,239,.06);}
+    28%,99%{border-color:rgba(41,182,239,.34);box-shadow:none;}
+  }
+  .waechter__steps.v19-flow-ready .waechter-step__visual{
+    animation:v19GuardianSymbol 8s ease-in-out infinite;
+    animation-delay:var(--v19-delay);animation-play-state:paused;
+  }
+  .waechter__steps.v19-flow-ready.v19-in-view .waechter-step__visual{animation-play-state:running;}
+  @keyframes v19GuardianSymbol{0%,15%{filter:drop-shadow(0 0 8px rgba(41,182,239,.52));transform:translateY(-2px)}23%,100%{filter:none;transform:none}}
+  .waechter__steps.v19-flow-ready .waechter-step__connector{color:#EAF4FC;}
+  .waechter__steps.v19-flow-ready .waechter-step__connector::after{
+    content:"";position:absolute;width:7px;height:7px;left:50%;top:50%;border-radius:50%;pointer-events:none;
+    background:#C8F7FF;box-shadow:0 0 0 3px rgba(41,182,239,.3),0 0 11px #29B6EF;
+    animation:v19ConnectorPulse 8s linear infinite;animation-delay:calc(var(--v19-delay) + 1.15s);animation-play-state:paused;
+  }
+  .waechter__steps.v19-flow-ready.v19-in-view .waechter-step__connector::after{animation-play-state:running;}
+  @keyframes v19ConnectorPulse{0%{opacity:0;transform:translate(-125%,-50%)}4%{opacity:1}12%{opacity:0;transform:translate(55%,-50%)}13%,100%{opacity:0}}
+  .waechter__steps.v19-flow-ready .waechter-step__number{
+    animation:v19NumberGlow 8s ease infinite;
+    animation-delay:var(--v19-delay);animation-play-state:paused;
+  }
+  .waechter__steps.v19-flow-ready.v19-in-view .waechter-step__number{animation-play-state:running;}
+  @keyframes v19NumberGlow{0%,21%{background:#96E8FF;box-shadow:0 0 0 5px rgba(41,182,239,.16)}26%,100%{background:#29B6EF;box-shadow:none}}
+}
+/* 03. Animate real text on scroll, not entire image cards or unclickable wrappers.
+   The original V14 section/card reveals remain in place. Only text targets get
+   an additional modest 7px motion; content remains accessible if JS fails. */
+html.v19-text-motion .v19-text-reveal:not(.v19-text-visible){opacity:0;transform:translateY(9px)}
+html.v19-text-motion .v19-text-reveal{transition:opacity .47s cubic-bezier(.2,.7,.2,1),transform .47s cubic-bezier(.2,.7,.2,1);transition-delay:var(--v19-text-delay,0ms);}
+html.v19-text-motion .v19-text-reveal.v19-text-visible{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion:reduce){
+ .ek-v19-cta__photo-rim-core,.ek-v19-wave__strand{animation:none!important;}
+ .ek-v19-wave__tracer{display:none!important;}
+ .waechter-step,.waechter-step__visual,.waechter-step__number,.waechter-step__connector::after{animation:none!important;}
+ html.v19-text-motion .v19-text-reveal{opacity:1!important;transform:none!important;transition:none!important;}
+}
+/* V19 QA correction: the earlier V14 entrance animation had higher specificity
+   and reset delays. Only the Wächter workflow overrides it; the original Hero
+   and the other reveal effects are unaffected. */
+@media(prefers-reduced-motion:no-preference){
+ .waechter__steps.v19-flow-ready .waechter-step{
+   animation:v19GuardianStage 8s ease-in-out infinite!important;
+   animation-delay:var(--v19-delay)!important;
+   animation-play-state:paused!important;
+ }
+ .waechter__steps.v19-flow-ready.v19-in-view .waechter-step{animation-play-state:running!important;}
+}
+/* Strong luminous centerline replicating the reference's blue flowing sweep. */
+.ek-v19-wave__strand--bright{
+  stroke:#68D9FF;opacity:.88;stroke-width:2.8;
+  filter:drop-shadow(0 0 7px #29B6EF) drop-shadow(0 0 12px rgba(41,182,239,.46));
+}
+.ek-v19-wave__strand--wide{stroke:#29B6EF;opacity:.24;stroke-width:7;}

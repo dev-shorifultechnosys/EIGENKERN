@@ -1,0 +1,100 @@
+/* EIGENKERN V16 — VISUAL-REFERENCE MATCH (hero only)
+   --------------------------------------------------------------
+   Source illustration: exact user-approved reference, compressed WebP.
+   Genuine independent SVG motion: incoming files, local→guardian→cloud,
+   returning answers, shield orbit. Mouse-responsive hero waves are in
+   hero-animation.js. Reduced motion shows a complete, static explanation.
+   Remaining V15 homepage CSS and video player are intentionally untouched.
+*/
+.hero__inner.container-wide{grid-template-columns:minmax(0,.84fr) minmax(0,1.46fr);gap:clamp(14px,2vw,34px);}
+.hero__content{max-width:525px;}
+.hero__title{font-size:clamp(39px,3.67vw,60px);}
+.hero__description{max-width:490px;}
+.hero{background:linear-gradient(114deg,#f8fcff 0%,#e8f4ff 42%,#d3e8fc 100%);}
+.hero__trust{margin-top:26px;}
+/* The existing hero canvas draws gentle waving strands across the entire hero. */
+.ek-ref-flow{
+  --ek-stage-width:100%;
+  width:100%;max-width:none;aspect-ratio:auto;overflow:visible;
+  padding:0;background:transparent;border:0;border-radius:0;
+  box-shadow:none!important;backdrop-filter:none;-webkit-backdrop-filter:none;
+  transform:translate3d(calc(var(--ek-pointer-x) * -.12),calc(var(--ek-pointer-y) * -.09),0);
+  position:relative;isolation:isolate;
+}
+.ek-ref-flow:hover{box-shadow:none!important;}
+.ek-ref-flow__viewport{width:100%;overflow:visible;outline-offset:4px;}
+.ek-ref-flow__stage{position:relative;width:100%;aspect-ratio:1678/937;isolation:isolate;}
+.ek-ref-flow__art{display:block;width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 7%,#000 93%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 8%,#000 92%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to right,transparent 0%,#000 7%,#000 93%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 8%,#000 92%,transparent 100%);
+  mask-composite:intersect;}
+.ek-ref-flow__paths{position:absolute;inset:0;z-index:5;width:100%;height:100%;pointer-events:none;}
+.ek-ref-flow__rail{fill:none;stroke:#55C9FA;stroke-width:7;opacity:.62;filter:drop-shadow(0 0 8px #27C9FF);}
+.ek-ref-flow__rail--wide{stroke-width:9;opacity:.48;}
+.ek-ref-flow__rail--return{stroke-width:2.5;opacity:.6;stroke-dasharray:12 10;animation:ekRefRail 10s linear infinite;}
+@keyframes ekRefRail{to{stroke-dashoffset:-440}}
+.ek-ref-flow__ball{fill:#FFFFFF;stroke:#0ABEFF;stroke-width:2;filter:drop-shadow(0 0 7px #00BFFF);}
+.ek-ref-flow__ball--cyan{fill:#24D5FF;}
+.ek-ref-flow__ball--halo{fill:#47D0FF;opacity:.38;filter:url(#ek-ref-ball-glow);stroke:none;}
+.ek-ref-flow__ball--return{fill:#1A95F5;stroke:#fff;stroke-width:2;}
+.ek-ref-flow__ball--orbit{fill:#1DE7F6;stroke:#fff;stroke-width:1.2;filter:drop-shadow(0 0 6px #11B4F0);}
+/* Optical glow layers are aligned precisely to the 3D hardware in the supplied artwork. */
+.ek-ref-flow__sheen{position:absolute;z-index:2;pointer-events:none;display:block;mix-blend-mode:screen;animation:ekRefGlow 3.8s ease-in-out infinite alternate;}
+.ek-ref-flow__sheen--device{left:22.6%;top:35%;width:13%;height:22.7%;border:1px solid rgba(72,215,255,.34);border-radius:3.2%;box-shadow:0 0 12px 2px rgba(15,205,255,.25),inset 0 0 12px rgba(13,209,255,.17);}
+.ek-ref-flow__sheen--guardian{left:44%;top:29.8%;width:18%;height:29.7%;border:2px solid rgba(9,209,254,.29);border-radius:12%;box-shadow:0 0 28px 6px rgba(19,200,255,.31);animation-delay:-1.2s;}
+.ek-ref-flow__sheen--cloud{left:70%;top:35%;width:22%;height:20%;border-radius:50%;box-shadow:0 0 35px 10px rgba(49,183,255,.18);animation-delay:-2.2s;}
+@keyframes ekRefGlow{from{opacity:.35;filter:brightness(1)}to{opacity:.8;filter:brightness(1.25)}}
+.ek-ref-flow__file-pulse{position:absolute;z-index:3;width:1.1%;aspect-ratio:1;border-radius:50%;background:#49D0FF;box-shadow:0 0 14px 4px #53CFFF;opacity:0;pointer-events:none;animation:ekRefFile 2.9s ease-in-out infinite;}
+.ek-ref-flow__file-pulse--a{left:12%;top:27%;animation-delay:0s}
+.ek-ref-flow__file-pulse--b{left:11%;top:39%;animation-delay:-.72s}
+.ek-ref-flow__file-pulse--c{left:11%;top:50%;animation-delay:-1.44s}
+.ek-ref-flow__file-pulse--d{left:12%;top:62%;animation-delay:-2.16s}
+@keyframes ekRefFile{0%,70%{opacity:0;transform:translate(0,0) scale(.6)}15%{opacity:.8}65%{opacity:.55;transform:translate(130%,7px) scale(1.05)}100%{opacity:0}}
+/* The source artwork's invented zero-percent leak statistic was replaced with a
+   dark, CSS/HTML semantic safety badge — not a measured quantitative claim. */
+.ek-ref-flow__safety{position:absolute;z-index:7;left:40.8%;top:64.5%;width:25.2%;height:6.9%;border-radius:999px;color:#fff;background:linear-gradient(180deg,#006da9,#083e70);border:1px solid rgba(103,227,255,.76);display:flex;align-items:center;justify-content:center;font-size:clamp(8px,.79vw,12px);font-weight:760;line-height:1.08;box-shadow:0 0 20px rgba(25,187,240,.33);white-space:nowrap;text-shadow:0 1px 2px rgba(0,26,58,.35);}
+.ek-ref-flow__mode{position:absolute;z-index:8;right:4%;top:5%;padding:5px 9px;background:rgba(255,255,255,.75);border:1px solid #bfdff8;border-radius:30px;font-size:clamp(8px,.65vw,10px);font-weight:760;color:#15568b;letter-spacing:.04em;}
+.ek-ref-flow__disclaimer{text-align:center;font-size:11px;color:#486781;margin:3px 0 0;}
+.ek-ref-flow__swipe,.ek-ref-flow__mobile-list{display:none;}
+.ek-ref-flow__translated{display:none;}
+/* English accessible editability: cover only raster German lettering, not the artwork. */
+html[lang="en"] .ek-ref-flow__translated{position:absolute;z-index:6;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:750;line-height:1.15;font-size:clamp(9px,.85vw,13px);}
+html[lang="en"] .ek-ref-flow__translated--top{left:40.6%;top:12.5%;width:27%;height:4.2%;background:#e6f1fe;color:#0B2E55;border-radius:14px;}
+html[lang="en"] .ek-ref-flow__translated--local{left:23.3%;top:46.8%;width:12%;height:10%;padding:0 5px;background:linear-gradient(180deg,#09305d,#0a396c);color:#fff;font-size:clamp(8px,.77vw,12px);}
+html[lang="en"] .ek-ref-flow__translated--guardian{left:45.2%;top:46.5%;width:15.8%;height:10%;background:linear-gradient(180deg,#056aa8,#074b80);color:white;font-size:clamp(8px,.75vw,11px);}
+html[lang="en"] .ek-ref-flow__translated--cloud{left:73.5%;top:45.6%;width:14.5%;height:12%;background:linear-gradient(180deg,#e6f5ff,#ddecff);color:#0b3465;}
+html[lang="en"] .ek-ref-flow__translated--original{left:21%;top:64.7%;width:17%;height:4.9%;background:#eaf5ff;color:#104f74;border-radius:18px;}
+html[lang="en"] .ek-ref-flow__translated--bottom{left:33.3%;top:82.7%;width:40.5%;height:5.7%;background:#e9f3ff;color:#183a65;font-size:clamp(8px,.75vw,12px);border-radius:18px;}
+@media(max-width:1200px){.hero__inner.container-wide{grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);}.hero__title{font-size:clamp(35px,3.7vw,54px);}}
+@media(max-width:1100px){
+  .hero__inner.container-wide{grid-template-columns:minmax(0,1fr);gap:12px;padding-block:42px 35px;}
+  .hero__content{max-width:720px;}
+  .ek-ref-flow{max-width:850px;justify-self:center;}
+  .ek-ref-flow__safety{font-size:clamp(9px,1.38vw,13px)}
+  html[lang="en"] .ek-ref-flow__translated{font-size:clamp(9px,1.2vw,12px);}
+}
+@media(max-width:650px){
+  .hero__inner.container-wide{gap:16px;padding-top:34px;padding-bottom:32px;}
+  .hero__content{width:100%;}
+  .ek-ref-flow{width:100%;max-width:100%;transform:none!important;}
+  .ek-ref-flow__viewport{overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:#83bdeb #eaf6ff;border-radius:16px;}
+  .ek-ref-flow__viewport:focus-visible{outline:2px solid #1465B5;outline-offset:2px;}
+  .ek-ref-flow__stage{width:690px;min-width:690px;}
+  .ek-ref-flow__mode{font-size:9px;}
+  .ek-ref-flow__safety{font-size:11px;}
+  .ek-ref-flow__swipe{display:block;margin:7px 0 9px;text-align:center;font-size:11px;font-weight:650;color:#1d639c;}
+  .ek-ref-flow__mobile-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;list-style:none;padding:0;margin:12px 0 2px;}
+  .ek-ref-flow__mobile-list li{min-width:0;display:flex;gap:7px;align-items:start;padding:10px;background:#f5fbff;border:1px solid #bddbf2;border-radius:11px;}
+  .ek-ref-flow__mobile-list .ek-ref-flow__number{flex:none;width:24px;height:24px;border-radius:50%;background:#1265b0;color:white;display:grid;place-items:center;font-size:9px;font-weight:800;}
+  .ek-ref-flow__mobile-list strong{font-size:11px;color:#08213d;line-height:1.2;display:block;}
+  .ek-ref-flow__mobile-list small{font-size:10px;color:#456780;line-height:1.3;display:block;margin-top:3px;}
+  .ek-ref-flow__disclaimer{font-size:10px;margin-top:4px;}
+}
+@media(max-width:370px){.ek-ref-flow__mobile-list{grid-template-columns:1fr;} .ek-ref-flow__stage{width:650px;min-width:650px;}}
+@media(prefers-reduced-motion:reduce){
+  .ek-ref-flow__paths circle{display:none!important;}
+  .ek-ref-flow__rail--return{animation:none!important;stroke-dasharray:none;}
+  .ek-ref-flow__sheen,.ek-ref-flow__file-pulse{animation:none!important;}
+  .ek-ref-flow{transform:none!important;transition:none!important;}
+}

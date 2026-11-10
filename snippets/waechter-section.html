@@ -1,0 +1,45 @@
+<!-- EIGENKERN V14 reusable HTML snippet; requires global CSS/JS/icon sprite. -->
+<section aria-labelledby="waechter-heading" class="waechter" id="waechter">
+<div class="container-wide">
+<div class="waechter__panel">
+<div class="waechter__intro">
+<p class="waechter__eyebrow"><span aria-hidden="true" class="eyebrow-line"></span><span data-i18n="guardEyebrow">DAS WÄCHTER-PRINZIP</span></p>
+<h2 class="waechter__heading" data-i18n="guardHeading" id="waechter-heading">So bleibt Vertrauliches wirklich vertraulich.</h2>
+<p class="waechter__description" data-i18n="guardLead">Der Wächter erstellt lokal eine pseudonymisierte Schattenkopie Ihrer Dokumente. Nur im optionalen Hybrid-Modus bearbeitet eine Cloud-KI diese Kopie. Die Originale bleiben in Ihrer eigenen Umgebung.</p>
+<button aria-controls="waechter-detail" aria-expanded="false" class="button button--primary waechter__action" id="waechter-toggle" type="button">
+<span data-i18n="guardButton">Ablauf im Detail</span>
+<svg aria-hidden="true" class="icon"><use href="#icon-arrow-right"></use></svg>
+</button>
+</div>
+<ol aria-label="Datenschutzablauf in vier Schritten" class="waechter__steps" data-aria-i18n="guardStepsLabel">
+<li class="waechter-step">
+<div aria-hidden="true" class="waechter-step__visual"><svg class="waechter-step__image"><use href="#icon-waechter-document"></use></svg></div>
+<div class="waechter-step__title-row"><span class="waechter-step__number">1</span><h3 data-i18n="guardStep1Title">Originaldokument</h3></div>
+<p class="waechter-step__copy" data-i18n="guardStep1Body">Ihre Dokumente bleiben in Ihrer Umgebung, z. B. Verträge, Akten und Fachunterlagen.</p>
+<span aria-hidden="true" class="waechter-step__connector"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+</li>
+<li class="waechter-step">
+<div aria-hidden="true" class="waechter-step__visual"><svg class="waechter-step__image"><use href="#icon-waechter-guardian"></use></svg></div>
+<div class="waechter-step__title-row"><span class="waechter-step__number">2</span><h3 data-i18n="guardStep2Title">Wächter / Schattenkopie</h3></div>
+<p class="waechter-step__copy" data-i18n="guardStep2Body">Der Wächter ersetzt sensible Namen lokal durch Platzhalter, z. B. Person_01 und Firma_01.</p>
+<span aria-hidden="true" class="waechter-step__connector"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+</li>
+<li class="waechter-step">
+<div aria-hidden="true" class="waechter-step__visual"><svg class="waechter-step__image"><use href="#icon-waechter-cloud"></use></svg></div>
+<div class="waechter-step__title-row"><span class="waechter-step__number">3</span><h3 data-i18n="guardStep3Title">Cloud-KI</h3></div>
+<p class="waechter-step__copy" data-i18n="guardStep3Body">Nur im Hybrid-Modus verarbeitet die gewählte Cloud-KI die pseudonymisierte Schattenkopie.</p>
+<span aria-hidden="true" class="waechter-step__connector"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+</li>
+<li class="waechter-step">
+<div aria-hidden="true" class="waechter-step__visual"><svg class="waechter-step__image"><use href="#icon-waechter-answer"></use></svg></div>
+<div class="waechter-step__title-row"><span class="waechter-step__number">4</span><h3 data-i18n="guardStep4Title">Antwort zurück</h3></div>
+<p class="waechter-step__copy" data-i18n="guardStep4Body">Die Antwort kommt lokal zurück; erst dort werden die Platzhalter durch echte Angaben ersetzt.</p>
+</li>
+</ol>
+<div class="waechter__detail" hidden="" id="waechter-detail">
+<h3 data-i18n="guardDetailTitle">Was bedeutet das für Ihre Daten?</h3>
+<p data-i18n="guardDetailBody">Ihre Originaldateien werden für den optionalen Cloud-Schritt nicht als Original an den Cloud-Dienst übertragen. Stattdessen erstellt der Wächter lokal eine pseudonymisierte Schattenkopie. Die Zuordnung von Platzhaltern zu echten Namen verbleibt in Ihrer Umgebung.</p>
+</div>
+</div>
+</div>
+</section>

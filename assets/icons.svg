@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <!-- Monochrome, stroke-based vector icons; scalable and retina-independent. -->
+  <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2" fill="currentColor" stroke="none"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><circle cx="12" cy="15" r="1.25" fill="#0d2134" stroke="none"/></symbol>
+  <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+  <symbol id="icon-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M21 16.4v3a2 2 0 0 1-2.15 2c-8.66-.75-15.48-7.57-16.23-16.23A2 2 0 0 1 4.62 3h3a2 2 0 0 1 2 1.72l.47 3.13a2 2 0 0 1-.57 1.72L8.17 10.9a16.65 16.65 0 0 0 4.93 4.93l1.32-1.35a2 2 0 0 1 1.72-.57l3.13.47A2 2 0 0 1 21 16.4Z"/></symbol>
+  <symbol id="icon-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.25"/><path d="m10 8.25 6 3.75-6 3.75Z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="icon-shield-check" viewBox="0 0 24 24"><path d="m12 2 8.5 4v6.1c0 5-3.5 8.1-8.5 10.1-5-2-8.5-5.1-8.5-10.1V6L12 2Z"/><path d="m8.3 12.3 2.3 2.3 5-5"/></symbol>
+  <symbol id="icon-users" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-2a6 6 0 0 1 12 0v2"/><path d="M17 4a3 3 0 0 1 0 6M21 21v-2a5.6 5.6 0 0 0-4.5-5.5"/></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24"><path d="m12 2 9.5 5.4L12 13 2.5 7.4 12 2Zm-9.5 10L12 17.7 21.5 12M2.5 16.5 12 22l9.5-5.5"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="icon-x" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+  <symbol id="icon-external" viewBox="0 0 24 24"><path d="M13 5h6v6M19 5l-9 9"/><path d="M19 14v5H5V5h5"/></symbol>
+</svg>
